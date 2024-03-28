@@ -5,11 +5,12 @@ import com.study.project.repository.MemberRepository;
 import com.study.project.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Transactional
 public class MemberService {
 
 
@@ -20,6 +21,7 @@ public class MemberService {
     }
 
     //회원가입
+
     public Long join(Member member){
         //중복회원 안됨
         validateDuplicateMember(member);
